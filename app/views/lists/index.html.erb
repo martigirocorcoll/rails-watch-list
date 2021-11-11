@@ -1,0 +1,9 @@
+<h1>Lists list! </h1>
+<%@lists.each do |list| %>
+<ul>
+  <li><%= link_to list.name, list_path(list) %></li>
+</ul>
+<%end%>
+<div class="btn btn-success">
+<%= link_to "Create a list", new_list_path %>
+</div>
