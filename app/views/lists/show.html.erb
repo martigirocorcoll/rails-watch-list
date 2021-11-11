@@ -1,5 +1,17 @@
-<h1>Restaurants#show</h1>
+<h1>Lists#show</h1>
 
 <%= @list.name %>
+
+<h2>Bookmarks</h2>
+<ul>
+<% @bookmarks.each do |bookmark| %>
+  <li><%= bookmark.comment %> - <%= bookmark.movie.title %> - <%= bookmark.list.name %> - <%= bookmark.id %>  </li>
+  <%= link_to "Delete",
+      delete_path(bookmark.id),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %>
+<% end  %>
+</ul>
 <br>
   <li><%= link_to "Vuelve a la lista", lists_path %></li>
+  <li><%= link_to "Create a bookmark", new_list_bookmark_path(@list) %></li>
