@@ -1,4 +1,4 @@
-<h1>New rating for <% @list.name%></h1>
+<h1>Add a film to <% @list.name%> list</h1>
 <%= simple_form_for [ @list, @bookmark ] do |f| %>
   <%= f.input :comment %>
   <%= f.association :movie %>
