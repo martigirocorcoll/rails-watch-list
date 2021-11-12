@@ -1,9 +1,11 @@
 <h1>Lists list! </h1>
 <div class="cards">
   <%@lists.each do |list| %>
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path list.photo.key%>)">
-    <%= link_to list.name, list_path(list) %>
-    </div>
+    <%= link_to list_path(list) do %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path list.photo.key%>)">
+      <h1><%= list.name  %></h1>
+      </div>
+    <%end%>
   <%end%>
 </div>
 <div class="btn btn-success">
